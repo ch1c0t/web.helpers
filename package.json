@@ -1,5 +1,5 @@
 {
-  "name": "render",
+  "name": "web.helpers",
   "main": "lib/main.js",
   "version": "0.0.0",
   "scripts": {
