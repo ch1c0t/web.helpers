@@ -1,7 +1,9 @@
-module.exports = (id, object) ->
+render = (id, object) ->
   node = document.getElementById id
 
   if Array.isArray object
     node.replaceChildren ...object
   else
     node.replaceChildren object
+
+export { render }

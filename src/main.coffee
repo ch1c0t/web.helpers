@@ -1,3 +1,2 @@
-module.exports =
-  render: require './render'
-  isMobile: require './is_mobile'
+export { render } from './render'
+export { isMobile } from './is_mobile'

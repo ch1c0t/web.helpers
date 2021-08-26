@@ -7,4 +7,4 @@ isAgentMobile = ->
 isMobile = ->
   isScreenSmall() or isAgentMobile()
 
-module.exports = isMobile
+export { isMobile }
