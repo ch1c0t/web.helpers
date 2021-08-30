@@ -1,0 +1,6 @@
+name: pwa0
+short_name: pwa0
+description: Some description
+start_url: /
+display: standalone
+background_color: white

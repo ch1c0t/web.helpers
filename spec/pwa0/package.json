@@ -1,0 +1,16 @@
+{
+  "name": "pwa0",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "makepwa watch",
+    "build": "makepwa build"
+  },
+  "devDependencies": {
+    "coffee-loader": "^2.0.0",
+    "coffeescript": "^2.5.1",
+    "makepwa": "0.0.16"
+  },
+  "dependencies": {
+    "web.helpers": "file:../.."
+  }
+}
