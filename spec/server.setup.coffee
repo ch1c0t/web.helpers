@@ -6,7 +6,6 @@ StartServer = ->
   new Promise (resolve) ->
     server.stdout.on 'data', (data) ->
       if data.toString().startsWith 'The server is listening'
-        console.log 'The server has been started for testing.'
         resolve server
 
 StopServer = (server) ->
@@ -14,7 +13,6 @@ StopServer = (server) ->
 
   new Promise (resolve) ->
     server.on 'close', ->
-      console.log "The server has been terminated."
       resolve()
 
 module.exports = { StartServer, StopServer }
