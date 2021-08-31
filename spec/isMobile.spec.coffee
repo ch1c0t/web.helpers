@@ -3,9 +3,7 @@
 { devices, chromium } = require 'playwright'
 
 NewPage = ({ device }) ->
-  browser = await chromium.launch
-    args: ['--start-maximized', '--window-size=1920,1080']
-    defaultViewport: null
+  browser = await chromium.launch()
   context = await browser.newContext { ...devices[device] }
 
   page = await context.newPage()
@@ -23,7 +21,7 @@ describe 'isMobile', ->
     text = await element.innerText()
     expect(text).toEqual 'Mobile version'
 
-  # https://github.com/microsoft/playwright/issues/1086#issuecomment-592227413
+  # https://github.com/microsoft/playwright/issues/1086
   # How to get a headless page with an appropriate viewport?
   xit 'renders a desktop version', ->
     @page = await NewPage { 'Desktop Chrome' }
