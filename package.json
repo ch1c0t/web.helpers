@@ -1,5 +1,6 @@
 {
   "name": "web.helpers",
+  "description": "A few functions to create web user intefaces",
   "main": "lib/main.js",
   "type": "module",
   "version": "0.0.0",

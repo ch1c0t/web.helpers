@@ -1,9 +1,9 @@
-render = (id, object) ->
+render = (id, view) ->
   node = document.getElementById id
 
-  if Array.isArray object
-    node.replaceChildren ...object
+  if Array.isArray view
+    node.replaceChildren ...view
   else
-    node.replaceChildren object
+    node.replaceChildren view
 
 export { render }
