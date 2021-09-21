@@ -50,7 +50,7 @@ is to check if you are in a mobile browser:
 import { isMobile } from 'web.helpers'
 
 if isMobile()
-  console.log 'only inside a mobile browser'
+  console.log 'inside of a mobile browser'
 else
-  console.log 'only if not in a mobile browser'
+  console.log 'otherwise'
 ```
