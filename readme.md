@@ -3,13 +3,13 @@
 `web.helpers` are a few functions to create web user interfaces. To install:
 
 ```
-npm install web.helpers
+npm install @ch1c0t/web.helpers
 ```
 
 ## render
 
 To import:
-```
+```coffee
 import { render } from 'web.helpers'
 ```
 
@@ -24,7 +24,7 @@ import { render } from 'web.helpers'
 [HTMLElement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 
 Usage examples:
-```
+```coffee
 div = document.createElement 'div'
 render 'SomeId', div
 
@@ -35,7 +35,7 @@ array = [
 render 'AnotherId', array
 ```
 
-`render` updates an element at `id` with [replaceChildren][replaceChildren].
+`render` updates an element at `id` with [Element.replaceChildren][replaceChildren].
 
 One way to create elements is with [web.tags][web.tags].
 
@@ -46,7 +46,7 @@ One way to create elements is with [web.tags][web.tags].
 
 is to check if you are in a mobile browser:
 
-```
+```coffee
 import { isMobile } from 'web.helpers'
 
 if isMobile()
