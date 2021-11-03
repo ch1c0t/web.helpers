@@ -3,7 +3,7 @@
   "description": "A few functions to create web user intefaces",
   "main": "lib/main.js",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "coffee --watch --compile --output lib src",
     "test": "jasmine"

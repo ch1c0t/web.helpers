@@ -10,7 +10,7 @@ npm install @ch1c0t/web.helpers
 
 To import:
 ```coffee
-import { render } from 'web.helpers'
+import { render } from '@ch1c0t/web.helpers'
 ```
 
 `render` accepts two arguments:
@@ -47,7 +47,7 @@ One way to create elements is with [web.tags][web.tags].
 is to check if you are in a mobile browser:
 
 ```coffee
-import { isMobile } from 'web.helpers'
+import { isMobile } from '@ch1c0t/web.helpers'
 
 if isMobile()
   console.log 'inside of a mobile browser'
