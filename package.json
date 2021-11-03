@@ -6,12 +6,12 @@
   "version": "0.0.0",
   "scripts": {
     "start": "coffee --watch --compile --output lib src",
-    "spec": "jasmine"
+    "test": "jasmine"
   },
   "devDependencies": {
     "coffeescript": "^2.5.1",
     "jasmine": "^3.9.0",
-    "playwright": "^1.14.1",
+    "puppeteer": "^10.4.0",
     "serve-handler": "^6.1.3"
   },
   "author": "Anatoly Chernov <chertoly@gmail.com>",

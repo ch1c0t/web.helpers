@@ -1,33 +1,22 @@
 { StartServer, StopServer } = require './server.setup.coffee'
 { OpenPage } = require './browser.setup.coffee'
-{ devices, chromium } = require 'playwright'
-
-NewPage = ({ device }) ->
-  browser = await chromium.launch()
-  context = await browser.newContext { ...devices[device] }
-
-  page = await context.newPage()
-  await page.goto 'http://localhost:8080'
-  page
 
 describe 'isMobile', ->
   beforeAll ->
     @server = await StartServer()
 
   it 'renders a mobile version', ->
-    @page = await NewPage { 'Pixel 5' }
+    @page = await OpenPage { device: 'Nexus 5' }
 
     element = await @page.$ '#DesktopOrMobile'
-    text = await element.innerText()
+    text = await element.evaluate (el) -> el.textContent
     expect(text).toEqual 'Mobile version'
 
-  # https://github.com/microsoft/playwright/issues/1086
-  # How to get a headless page with an appropriate viewport?
-  xit 'renders a desktop version', ->
-    @page = await NewPage { 'Desktop Chrome' }
+  it 'renders a desktop version', ->
+    @page = await OpenPage {}
 
     element = await @page.$ '#DesktopOrMobile'
-    text = await element.innerText()
+    text = await element.evaluate (el) -> el.textContent
     expect(text).toEqual 'Desktop version'
 
   afterEach ->

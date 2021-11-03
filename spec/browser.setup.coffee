@@ -1,8 +1,13 @@
-{ chromium } = require 'playwright'
+puppeteer = require 'puppeteer'
 
-OpenPage = ->
-  browser = await chromium.launch()
+OpenPage = (params) ->
+  browser = await puppeteer.launch headless: no
   page = await browser.newPage()
+
+  device = params?.device
+  if device?
+    await page.emulate puppeteer.devices[device]
+
   await page.goto 'http://localhost:8080'
   page
 

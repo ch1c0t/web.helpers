@@ -8,16 +8,16 @@ describe 'render', ->
 
   it 'accepts a single HTMLElement instance', ->
     one = await @page.$ '#One'
-    text = await one.innerText()
+    text = await one.evaluate (el) -> el.textContent
     expect(text).toEqual 'A single element.'
 
   it 'accepts an Array of HTMLElement instances', ->
     first = await @page.$ '#Many :first-child'
-    text = await first.innerText()
+    text = await first.evaluate (el) -> el.textContent
     expect(text).toEqual 'First'
 
     last = await @page.$ '#Many :last-child'
-    text2 = await last.innerText()
+    text2 = await last.evaluate (el) -> el.textContent
     expect(text2).toEqual 'Second'
 
   afterAll ->
